@@ -1,0 +1,32 @@
+==================================================
+LangGraph Simple Agent
+==================================================
+Using CUDA (NVIDIA GPU) for inference
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+Device set to use cuda
+Graph image saved to lg_graph_2.png
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> 
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> hello
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+User: hello
+Assistant: Hello! How can I assist you today?
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> q
+Goodbye!

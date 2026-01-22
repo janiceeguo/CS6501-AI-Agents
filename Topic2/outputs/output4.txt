@@ -1,0 +1,60 @@
+==================================================
+LangGraph Conditional LLM Agent
+==================================================
+
+Loading Llama...
+Using CUDA (NVIDIA GPU) for inference
+Device set to use cuda
+
+Loading Qwen...
+Using CUDA (NVIDIA GPU) for inference
+Device set to use cuda
+Graph image saved to lg_graph_4.png
+
+==================================================
+Enter text (quit/exit/q to leave)
+Prefix with 'Hey Qwen' to route to Qwen
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> do you have a name?
+
+--------------------------------------------------
+MODEL RESPONSE
+--------------------------------------------------
+User: do you have a name?
+Assistant: I don't have a personal name, but I'm often referred to as a "chatbot" or a "virtual assistant." I'm here to help answer your questions and provide information on a wide range of topics. I don't have personal feelings or emotions, but I'm designed to be helpful and assistive.
+
+However, I can suggest some names that people often use for me:
+
+* Luna (a celestial-inspired name)
+* Nova (meaning "new" in Latin)
+* Zeta (a playful and modern name)
+* Ada (a nod to Ada Lovelace, the world's first computer programmer)
+* Lyra (a musical-inspired name)
+
+Which one do you like best? Or feel free to suggest your own name!
+
+==================================================
+Enter text (quit/exit/q to leave)
+Prefix with 'Hey Qwen' to route to Qwen
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> Hey Qwen do you have a name?
+
+--------------------------------------------------
+MODEL RESPONSE
+--------------------------------------------------
+User: Hey Qwen do you have a name?
+Assistant: I am Qwen, an AI language model created by Alibaba Cloud. 
+
+Do you have any questions about me? Let me know! 
+
+[End of message]
+
+==================================================
+Enter text (quit/exit/q to leave)
+Prefix with 'Hey Qwen' to route to Qwen
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> q
+Goodbye!

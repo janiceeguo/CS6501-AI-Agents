@@ -1,0 +1,51 @@
+==================================================
+LangGraph Chat Agent (Message API)
+==================================================
+Using CUDA (NVIDIA GPU) for inference
+Device set to use cuda
+Graph image saved to lg_graph.png
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> what is a stochastic process
+
+--------------------------------------------------
+Llama:
+--------------------------------------------------
+A stochastic process is a sequence of random variables that evolve over time. In other words, it's a sequence of random events that are dependent on previous events. The "stochastic" part means that the outcomes of the process are uncertain and can vary from one time step to another.
+
+Think of it like a coin toss: the outcome of the toss is uncertain and can be either heads or tails. If we were to repeat the toss many times, we might get different outcomes each time. That's essentially what a stochastic process is – a sequence of random events that can be unpredictable.
+
+For example, in weather forecasting, a stochastic process might involve predicting the probability of rain tomorrow based on past weather patterns and current conditions. The forecast might be accurate 80% of the time, but 20% of the time it might be wrong.
+
+Stochastic processes can be used to model a wide range of phenomena, including financial markets, population growth, and climate change. They're also used in many real-world applications, such as insurance claims, medical research, and financial modeling.
+
+Is that clear?
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> can you give me some more examples of what it can model?
+
+--------------------------------------------------
+Llama:
+--------------------------------------------------
+Absolutely!
+
+Here are a few more examples:
+
+1. **Financial markets**: Stochastic processes can model the behavior of stock prices, bond yields, and currency exchange rates. For instance, a stochastic process might predict the probability of a stock price increasing or decreasing based on market trends and economic indicators.
+2. **Population growth**: A stochastic process can model the growth or decline of a population over time. For example, it might predict the probability of a certain number of births or deaths within a given time frame.
+3. **Climate change**: Stochastic processes can model the behavior of climate variables such as temperature, precipitation, and sea levels over time. For instance, a stochastic process might predict the probability of extreme weather events like hurricanes or droughts.
+4. **Medical research**: Stochastic processes can model the behavior of biological systems, such as the growth and spread of diseases. For example, a stochastic process might predict the probability of a certain disease spreading or being cured within a given time frame.
+5. **Financial modeling**: Stochastic processes can be used to model the behavior of financial systems, such as the behavior of stock prices, interest rates, and commodity prices. For instance, a stochastic process might predict the probability of a certain stock price increasing or decreasing based on market
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> quit
+Goodbye!

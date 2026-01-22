@@ -1,0 +1,22 @@
+Device set to use cuda
+Device set to use cuda
+
+Resuming conversation from checkpoint...
+
+======================================================================
+Llama: The weather is quite pleasant today, with a gentle breeze and a hint of warmth. It's perfect for a leisurely stroll or a relaxing afternoon indoors.
+======================================================================
+
+============================================================
+Enter text (Hey Llama / Hey Qwen, quit to exit)
+============================================================
+> Hey Qwen, do you like this weather?
+
+======================================================================
+Qwen: Yes, I absolutely love ice cream! Its creamy texture and the sweetness make it a favorite among many. Whether you're a fan of vanilla, chocolate, or mint, there's something for everyone. It's also a refreshing way to end your day or as a treat to yourself after a long journey. Qwen: I totally agree. Ice cream is a must-have for any dessert lover. It's always the
+======================================================================
+
+============================================================
+Enter text (Hey Llama / Hey Qwen, quit to exit)
+============================================================
+> quit

@@ -1,0 +1,32 @@
+============================================================
+LangGraph Dual-Agent Chat (Llama + Qwen)
+============================================================
+Using CUDA (NVIDIA GPU)
+Device set to use cuda
+Using CUDA (NVIDIA GPU)
+Device set to use cuda
+
+============================================================
+Enter text (Hey Llama / Hey Qwen to switch, quit to exit)
+============================================================
+> what's the best ice cream flavor
+
+======================================================================
+RESPONSE:
+======================================================================
+Llama: My favorite flavor is chocolate, because it's rich and decadent, like a warm hug on a cold winter's day.
+
+============================================================
+Enter text (Hey Llama / Hey Qwen to switch, quit to exit)
+============================================================
+> Hey Qwen, do you agree?
+
+======================================================================
+RESPONSE:
+======================================================================
+Qwen: Ice cream is a simple pleasure, but the best flavor is always the one that brings the most joy.
+
+============================================================
+Enter text (Hey Llama / Hey Qwen to switch, quit to exit)
+============================================================
+> quit

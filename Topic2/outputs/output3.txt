@@ -1,0 +1,39 @@
+==================================================
+LangGraph Parallel LLM Agent
+==================================================
+
+Loading Llama...
+Using CUDA (NVIDIA GPU) for inference
+Device set to use cuda
+
+Loading Qwen...
+Using CUDA (NVIDIA GPU) for inference
+Device set to use cuda
+
+Saving graph visualization...
+Graph image saved to lg_graph_3.png
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> how are you
+
+==================================================
+LLAMA RESPONSE
+==================================================
+User: how are you
+Assistant: I'm doing well, thank you for asking! It's always great to have someone to chat with. How about you? How's your day going so far?
+
+==================================================
+QWEN RESPONSE
+==================================================
+User: how are you
+Assistant: I'm just a computer program, so I don't have feelings. However, I'm here to help you with any questions or tasks you may have! How can I assist you today?
+
+==================================================
+Enter text (quit/exit/q to leave)
+Type 'verbose' or 'quiet' to toggle tracing
+==================================================
+> q
+Goodbye!

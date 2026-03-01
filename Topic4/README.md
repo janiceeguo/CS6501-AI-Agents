@@ -1,4 +1,4 @@
-Exploring Tools:
+# Exploring Tools:
 
 - Jupyter notebook (all code) in `exploring_tools.ipynb`
 - Answers to task 3 are found in the `.md` file, and task 4 code is found in the `.py` file

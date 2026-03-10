@@ -1,0 +1,18 @@
+Upload an image to begin conversation
+257b0cedd7cda9dae0f35c0d5dd4a972c89b953c.jpeg
+257b0cedd7cda9dae0f35c0d5dd4a972c89b953c.jpeg(image/jpeg) - 49239 bytes, last modified: 2/17/2026 - 100% done
+Saving 257b0cedd7cda9dae0f35c0d5dd4a972c89b953c.jpeg to 257b0cedd7cda9dae0f35c0d5dd4a972c89b953c.jpeg
+Final image size: (128, 69)
+Image uploaded ✔
+
+Ask about the image (q to quit): describe the image
+
+LLaVA:
+ The image depicts a stunning landscape featuring a lush valley with verdant green hills and rolling clouds in the background. At the bottom of the hill is a vibrant blue lake that reflects the surrounding scenery. The sky above the valley is partly cloudy, indicating good weather conditions. In the foreground, there's a clear view of the landscape, providing a panoramic perspective of the region. There's no text present in the image. 
+
+Ask about the image (q to quit): what does the weather look like in the image?
+
+LLaVA:
+ The weather in the image appears to be sunny with partly cloudy skies, suggesting it is likely a pleasant day for outdoor activities such as hiking or sightseeing. 
+
+Ask about the image (q to quit): q

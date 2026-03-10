@@ -1,0 +1,281 @@
+ ==================================================
+Persistent Conversation Agent
+==================================================
+Graph image saved to lg_graph.png
+
+  Resuming interrupted conversation (thread: conversation_1)
+  Pending node(s): ('get_user_input',)
+
+==================================================
+You (or 'quit' to exit): how many characters are in the word exponentiate
+  [Tool] text_stats('exponentiate') -> {'words': 1, 'characters': 12}
+
+Assistant: The word "exponentiate" has 12 characters.
+
+==================================================
+You (or 'quit' to exit): what is the tan of 12
+  [Tool] calculator('tan') -> -0.6358599286615808
+---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+/tmp/ipykernel_12242/4267963761.py in <cell line: 0>()
+    284 
+    285 if __name__ == "__main__":
+--> 286     main()
+
+33 frames/tmp/ipykernel_12242/4267963761.py in main()
+    262             print(f"\n  Resuming interrupted conversation (thread: {THREAD_ID})")
+    263             print(f"  Pending node(s): {existing.next}")
+--> 264             graph.invoke(None, config=config)
+    265         else:
+    266             history = existing.values.get("chat_history", [])
+
+/usr/local/lib/python3.12/dist-packages/langgraph/pregel/main.py in invoke(self, input, config, context, stream_mode, print_mode, output_keys, interrupt_before, interrupt_after, durability, **kwargs)
+   3069         interrupts: list[Interrupt] = []
+   3070 
+-> 3071         for chunk in self.stream(
+   3072             input,
+   3073             config,
+
+/usr/local/lib/python3.12/dist-packages/langgraph/pregel/main.py in stream(self, input, config, context, stream_mode, print_mode, output_keys, interrupt_before, interrupt_after, durability, subgraphs, debug, **kwargs)
+   2644                     for task in loop.match_cached_writes():
+   2645                         loop.output_writes(task.id, task.writes, cached=True)
+-> 2646                     for _ in runner.tick(
+   2647                         [t for t in loop.tasks.values() if not t.writes],
+   2648                         timeout=self.step_timeout,
+
+/usr/local/lib/python3.12/dist-packages/langgraph/pregel/_runner.py in tick(self, tasks, reraise, timeout, retry_policy, get_waiter, schedule_task)
+    165             t = tasks[0]
+    166             try:
+--> 167                 run_with_retry(
+    168                     t,
+    169                     retry_policy,
+
+/usr/local/lib/python3.12/dist-packages/langgraph/pregel/_retry.py in run_with_retry(task, retry_policy, configurable)
+     40             task.writes.clear()
+     41             # run the task
+---> 42             return task.proc.invoke(task.input, config)
+     43         except ParentCommand as exc:
+     44             ns: str = config[CONF][CONFIG_KEY_CHECKPOINT_NS]
+
+/usr/local/lib/python3.12/dist-packages/langgraph/_internal/_runnable.py in invoke(self, input, config, **kwargs)
+    654                     # run in context
+    655                     with set_config_context(config, run) as context:
+--> 656                         input = context.run(step.invoke, input, config, **kwargs)
+    657                 else:
+    658                     input = step.invoke(input, config)
+
+/usr/local/lib/python3.12/dist-packages/langgraph/_internal/_runnable.py in invoke(self, input, config, **kwargs)
+    398                 run_manager.on_chain_end(ret)
+    399         else:
+--> 400             ret = self.func(*args, **kwargs)
+    401         if self.recurse and isinstance(ret, Runnable):
+    402             return ret.invoke(input, config)
+
+/tmp/ipykernel_12242/4267963761.py in call_llm(state)
+    161 
+    162     def call_llm(state: AgentState) -> dict:
+--> 163         response = llm_with_tools.invoke(state["chat_history"])
+    164         return {
+    165             "llm_response": response,
+
+/usr/local/lib/python3.12/dist-packages/langchain_core/runnables/base.py in invoke(self, input, config, **kwargs)
+   5693         **kwargs: Any | None,
+   5694     ) -> Output:
+-> 5695         return self.bound.invoke(
+   5696             input,
+   5697             self._merge_configs(config),
+
+/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/chat_models.py in invoke(self, input, config, stop, **kwargs)
+    400             cast(
+    401                 "ChatGeneration",
+--> 402                 self.generate_prompt(
+    403                     [self._convert_input(input)],
+    404                     stop=stop,
+
+/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/chat_models.py in generate_prompt(self, prompts, stop, callbacks, **kwargs)
+   1121     ) -> LLMResult:
+   1122         prompt_messages = [p.to_messages() for p in prompts]
+-> 1123         return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+   1124 
+   1125     @override
+
+/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/chat_models.py in generate(self, messages, stop, callbacks, tags, metadata, run_name, run_id, **kwargs)
+    931             try:
+    932                 results.append(
+--> 933                     self._generate_with_cache(
+    934                         m,
+    935                         stop=stop,
+
+/usr/local/lib/python3.12/dist-packages/langchain_core/language_models/chat_models.py in _generate_with_cache(self, messages, stop, run_manager, **kwargs)
+   1233             result = generate_from_stream(iter(chunks))
+   1234         elif inspect.signature(self._generate).parameters.get("run_manager"):
+-> 1235             result = self._generate(
+   1236                 messages, stop=stop, run_manager=run_manager, **kwargs
+   1237             )
+
+/usr/local/lib/python3.12/dist-packages/langchain_openai/chat_models/base.py in _generate(self, messages, stop, run_manager, **kwargs)
+   1485                 )
+   1486             else:
+-> 1487                 raw_response = self.client.with_raw_response.create(**payload)
+   1488                 response = raw_response.parse()
+   1489         except openai.BadRequestError as e:
+
+/usr/local/lib/python3.12/dist-packages/openai/_legacy_response.py in wrapped(*args, **kwargs)
+    365         kwargs["extra_headers"] = extra_headers
+    366 
+--> 367         return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+    368 
+    369     return wrapped
+
+/usr/local/lib/python3.12/dist-packages/openai/_utils/_utils.py in wrapper(*args, **kwargs)
+    284                         msg = f"Missing required argument: {quote(missing[0])}"
+    285                 raise TypeError(msg)
+--> 286             return func(*args, **kwargs)
+    287 
+    288         return wrapper  # type: ignore
+
+/usr/local/lib/python3.12/dist-packages/openai/resources/chat/completions/completions.py in create(self, messages, model, audio, frequency_penalty, function_call, functions, logit_bias, logprobs, max_completion_tokens, max_tokens, metadata, modalities, n, parallel_tool_calls, prediction, presence_penalty, prompt_cache_key, prompt_cache_retention, reasoning_effort, response_format, safety_identifier, seed, service_tier, stop, store, stream, stream_options, temperature, tool_choice, tools, top_logprobs, top_p, user, verbosity, web_search_options, extra_headers, extra_query, extra_body, timeout)
+   1209     ) -> ChatCompletion | Stream[ChatCompletionChunk]:
+   1210         validate_response_format(response_format)
+-> 1211         return self._post(
+   1212             "/chat/completions",
+   1213             body=maybe_transform(
+
+/usr/local/lib/python3.12/dist-packages/openai/_base_client.py in post(self, path, cast_to, body, content, options, files, stream, stream_cls)
+   1295             method="post", url=path, json_data=body, content=content, files=to_httpx_files(files), **options
+   1296         )
+-> 1297         return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+   1298 
+   1299     def patch(
+
+/usr/local/lib/python3.12/dist-packages/openai/_base_client.py in request(self, cast_to, options, stream, stream_cls)
+   1003             response = None
+   1004             try:
+-> 1005                 response = self._client.send(
+   1006                     request,
+   1007                     stream=stream or self._should_stream_response_body(request=request),
+
+/usr/local/lib/python3.12/dist-packages/httpx/_client.py in send(self, request, stream, auth, follow_redirects)
+    912         auth = self._build_request_auth(request, auth)
+    913 
+--> 914         response = self._send_handling_auth(
+    915             request,
+    916             auth=auth,
+
+/usr/local/lib/python3.12/dist-packages/httpx/_client.py in _send_handling_auth(self, request, auth, follow_redirects, history)
+    940 
+    941             while True:
+--> 942                 response = self._send_handling_redirects(
+    943                     request,
+    944                     follow_redirects=follow_redirects,
+
+/usr/local/lib/python3.12/dist-packages/httpx/_client.py in _send_handling_redirects(self, request, follow_redirects, history)
+    977                 hook(request)
+    978 
+--> 979             response = self._send_single_request(request)
+    980             try:
+    981                 for hook in self._event_hooks["response"]:
+
+/usr/local/lib/python3.12/dist-packages/httpx/_client.py in _send_single_request(self, request)
+   1012 
+   1013         with request_context(request=request):
+-> 1014             response = transport.handle_request(request)
+   1015 
+   1016         assert isinstance(response.stream, SyncByteStream)
+
+/usr/local/lib/python3.12/dist-packages/httpx/_transports/default.py in handle_request(self, request)
+    248         )
+    249         with map_httpcore_exceptions():
+--> 250             resp = self._pool.handle_request(req)
+    251 
+    252         assert isinstance(resp.stream, typing.Iterable)
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py in handle_request(self, request)
+    254 
+    255             self._close_connections(closing)
+--> 256             raise exc from None
+    257 
+    258         # Return the response. Note that in this case we still have to manage
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection_pool.py in handle_request(self, request)
+    234                 try:
+    235                     # Send the request on the assigned connection.
+--> 236                     response = connection.handle_request(
+    237                         pool_request.request
+    238                     )
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/connection.py in handle_request(self, request)
+    101             raise exc
+    102 
+--> 103         return self._connection.handle_request(request)
+    104 
+    105     def _connect(self, request: Request) -> NetworkStream:
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py in handle_request(self, request)
+    134                 with Trace("response_closed", logger, request) as trace:
+    135                     self._response_closed()
+--> 136             raise exc
+    137 
+    138     # Sending the request...
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py in handle_request(self, request)
+    104                     headers,
+    105                     trailing_data,
+--> 106                 ) = self._receive_response_headers(**kwargs)
+    107                 trace.return_value = (
+    108                     http_version,
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py in _receive_response_headers(self, request)
+    175 
+    176         while True:
+--> 177             event = self._receive_event(timeout=timeout)
+    178             if isinstance(event, h11.Response):
+    179                 break
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_sync/http11.py in _receive_event(self, timeout)
+    215 
+    216             if event is h11.NEED_DATA:
+--> 217                 data = self._network_stream.read(
+    218                     self.READ_NUM_BYTES, timeout=timeout
+    219                 )
+
+/usr/local/lib/python3.12/dist-packages/httpcore/_backends/sync.py in read(self, max_bytes, timeout)
+    126         with map_exceptions(exc_map):
+    127             self._sock.settimeout(timeout)
+--> 128             return self._sock.recv(max_bytes)
+    129 
+    130     def write(self, buffer: bytes, timeout: float | None = None) -> None:
+
+/usr/lib/python3.12/ssl.py in recv(self, buflen, flags)
+   1230                     "non-zero flags not allowed in calls to recv() on %s" %
+   1231                     self.__class__)
+-> 1232             return self.read(buflen)
+   1233         else:
+   1234             return super().recv(buflen, flags)
+
+/usr/lib/python3.12/ssl.py in read(self, len, buffer)
+   1103                 return self._sslobj.read(len, buffer)
+   1104             else:
+-> 1105                 return self._sslobj.read(len)
+   1106         except SSLError as x:
+   1107             if x.args[0] == SSL_ERROR_EOF and self.suppress_ragged_eofs:
+
+KeyboardInterrupt: 
+
+
+==================================================
+Persistent Conversation Agent
+==================================================
+Graph image saved to lg_graph.png
+
+  Resuming interrupted conversation (thread: conversation_1)
+  Pending node(s): ('call_llm',)
+
+Assistant: The tangent of 12 degrees is approximately -0.6359.
+
+==================================================
+You (or 'quit' to exit): quit
+Goodbye!
+
+[Session ended -- history saved to conversation.db]
+Restart the script to continue as thread 'conversation_1'.

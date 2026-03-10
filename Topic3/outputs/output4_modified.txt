@@ -1,0 +1,141 @@
+============================================================
+TEST 1: Weather Tool
+============================================================
+
+User: What's the weather in Tokyo?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: get_weather
+  Args: {'location': 'Tokyo'}
+  Result: Clear, 65°F
+
+--- Iteration 2 ---
+Assistant: The weather in Tokyo is clear with a temperature of 65°F.
+
+
+============================================================
+TEST 2: Multi-call in SAME TURN (letter counts)
+============================================================
+
+User: Are there more i's than s's in Mississippi riverboats?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: 5
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: 5
+
+--- Iteration 2 ---
+Assistant: In the phrase "Mississippi riverboats," there are 5 occurrences of the letter 'i' and 5 occurrences of the letter 's'. Therefore, there are not more 'i's than 's's; they are equal.
+
+
+============================================================
+TEST 3: Sequential Chaining (inner + outer loop)
+============================================================
+
+User: What is the sin of the difference between the number of i's and s's in Mississippi riverboats?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: 5
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: 5
+
+--- Iteration 2 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'sin', 'value': 0}
+  Result: 0.0
+
+--- Iteration 3 ---
+Assistant: The number of 'i's in "Mississippi riverboats" is 5, and the number of 's's is also 5. The difference between these numbers is 0. 
+
+The sine of this difference is \( \sin(0) = 0.0 \).
+
+
+============================================================
+TEST 4: Uses ALL tools in one query
+============================================================
+
+User: In Mississippi riverboats, count i's and s's, compute the sin of their difference, tell me the weather in London, and give text statistics.
+
+--- Iteration 1 ---
+LLM wants to call 4 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: 5
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: 5
+  Tool: get_weather
+  Args: {'location': 'London'}
+  Result: Rainy, 48°F
+  Tool: text_stats
+  Args: {'text': 'Mississippi riverboats'}
+  Result: {'words': 2, 'characters': 22}
+
+--- Iteration 2 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'sin', 'value': 0}
+  Result: 0.0
+
+--- Iteration 3 ---
+Assistant: Here are the results from your requests:
+
+1. Count of **i's** in "Mississippi riverboats": **5**
+2. Count of **s's** in "Mississippi riverboats": **5**
+3. Weather in London: **Rainy, 48°F**
+4. Text statistics for "Mississippi riverboats": 
+   - Words: **2**
+   - Characters: **22**
+
+The sine of the difference between the counts of i's and s's (which is 0) is **0.0**.
+
+
+============================================================
+TEST 5: Force 5-turn sequential chaining
+============================================================
+
+User: You must follow each step in order and use tools whenever applicable. Step 1: Count i's in Mississippi riverboats. Step 2: Count the number of characters in Mississippi riverboats. Step 3: Compute the area of a rectangle that has length = # of i's and width = # of characters. Step 4: Take the cosine of the rectangle's area. Step 5: Multiply the cosine value by 10 and round to the nearest integer. Do not skip steps and do not combine steps.
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: 5
+  Tool: text_stats
+  Args: {'text': 'Mississippi riverboats'}
+  Result: {'words': 2, 'characters': 22}
+
+--- Iteration 2 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'rectangle_area', 'length': 5, 'width': 22}
+  Result: 110.0
+
+--- Iteration 3 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'cos', 'value': 110.0}
+  Result: -0.999020813314648
+
+--- Iteration 4 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'multiply', 'value': -0.999020813314648, 'value2': 10}
+  Result: -9.99020813314648
+
+--- Iteration 5 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'operation': 'round', 'value': -9.99020813314648}
+  Result: -10.0
+

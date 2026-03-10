@@ -1,0 +1,52 @@
+==================================================
+Persistent Conversation Agent
+==================================================
+Graph image saved to lg_graph.png
+
+  Resuming interrupted conversation (thread: conversation_1)
+  Pending node(s): ('get_user_input',)
+
+==================================================
+You (or 'quit' to exit): What's the weather in Tokyo?
+  [Tool] get_weather('Tokyo') -> Clear, 65°F
+
+Assistant: The weather in Tokyo is clear with a temperature of 65°F.
+
+==================================================
+You (or 'quit' to exit): Are there more i's than s's in Mississippi riverboats?
+  [Tool] count_letter('Mississippi riverboats', 'i') -> 5
+  [Tool] count_letter('Mississippi riverboats', 's') -> 5
+
+Assistant: There are an equal number of 'i's and 's's in "Mississippi riverboats," with 5 of each.
+
+==================================================
+You (or 'quit' to exit): What's the weather in New York and London?
+  [Tool] get_weather('New York') -> Cloudy, 55°F
+  [Tool] get_weather('London') -> Rainy, 48°F
+
+Assistant: The weather is as follows:
+
+- In New York, it's cloudy with a temperature of 55°F.
+- In London, it's rainy with a temperature of 48°F.
+
+==================================================
+You (or 'quit' to exit): What is the sin of the difference between the number of i's and s's in Mississippi riverboats?
+  [Tool] calculator('subtract') -> 0.0
+  [Tool] calculator('sin') -> 0.0
+
+Assistant: The sine of the difference between the number of 'i's and 's's in "Mississippi riverboats" is 0.0.
+
+==================================================
+You (or 'quit' to exit): What is the area of a rectangle that has length equal to the number of characters in the word Mississippi and width equal to the number of characters in the word riverboats
+  [Tool] text_stats('Mississippi') -> {'words': 1, 'characters': 11}
+  [Tool] text_stats('riverboats') -> {'words': 1, 'characters': 10}
+  [Tool] calculator('rectangle_area') -> 110.0
+
+Assistant: The area of the rectangle with a length of 11 (for "Mississippi") and a width of 10 (for "riverboats") is 110 square units.
+
+==================================================
+You (or 'quit' to exit): quit
+Goodbye!
+
+[Session ended -- history saved to conversation.db]
+Restart the script to continue as thread 'conversation_1'.

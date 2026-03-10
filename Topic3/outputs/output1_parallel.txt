@@ -1,0 +1,171 @@
+bash: line 1: ollama2.py: command not found
+
+======================================================================
+Llama 3.2-1B MMLU Evaluation (Quantized)
+======================================================================
+
+======================================================================
+Environment Check
+======================================================================
+✓ Running in Google Colab
+✓ Platform: Linux (x86_64)
+✓ GPU Available: Tesla T4
+✓ GPU Memory: 15.64 GB
+✓ Quantization disabled - loading full precision model
+⚠️  Could not check Hugging Face authentication
+
+======================================================================
+Configuration
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+Device: cuda
+Quantization: None (full precision)
+Expected memory: ~2.5 GB (FP16)
+Number of subjects: 1
+======================================================================
+
+
+======================================================================
+Starting evaluation on 1 subjects
+======================================================================
+
+
+Progress: 1/1 subjects
+
+======================================================================
+Evaluating subject: abstract_algebra
+======================================================================
+Testing abstract_algebra:   0% 0/100 [00:00<?, ?it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   1% 1/100 [00:00<01:03,  1.56it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   2% 2/100 [00:01<01:00,  1.62it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   3% 3/100 [00:01<00:52,  1.86it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   4% 4/100 [00:02<00:54,  1.75it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   5% 5/100 [00:02<00:53,  1.78it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   6% 6/100 [00:03<00:45,  2.05it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   7% 7/100 [00:03<00:41,  2.22it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   8% 8/100 [00:04<00:43,  2.11it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:   9% 9/100 [00:04<00:46,  1.97it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  10% 10/100 [00:05<00:46,  1.95it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  11% 11/100 [00:05<00:41,  2.15it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  12% 12/100 [00:05<00:37,  2.35it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  13% 13/100 [00:06<00:42,  2.03it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  14% 14/100 [00:07<00:44,  1.93it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  15% 15/100 [00:07<00:43,  1.97it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  16% 16/100 [00:07<00:39,  2.10it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  17% 17/100 [00:08<00:34,  2.40it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  18% 18/100 [00:08<00:36,  2.26it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  19% 19/100 [00:09<00:33,  2.41it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  20% 20/100 [00:09<00:36,  2.22it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  21% 21/100 [00:10<00:37,  2.09it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  22% 22/100 [00:11<00:44,  1.74it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  23% 23/100 [00:11<00:45,  1.70it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  24% 24/100 [00:12<00:44,  1.72it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  25% 25/100 [00:12<00:40,  1.84it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  26% 26/100 [00:12<00:34,  2.12it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  27% 27/100 [00:13<00:33,  2.15it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  28% 28/100 [00:13<00:33,  2.13it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  29% 29/100 [00:14<00:29,  2.39it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  30% 30/100 [00:14<00:26,  2.67it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  31% 31/100 [00:14<00:26,  2.62it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  32% 32/100 [00:15<00:24,  2.82it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  33% 33/100 [00:15<00:23,  2.88it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  34% 34/100 [00:15<00:21,  3.05it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  35% 35/100 [00:16<00:20,  3.10it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  36% 36/100 [00:16<00:24,  2.62it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  37% 37/100 [00:16<00:24,  2.60it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  38% 38/100 [00:17<00:26,  2.36it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  39% 39/100 [00:17<00:24,  2.48it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  40% 40/100 [00:18<00:22,  2.62it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  41% 41/100 [00:18<00:24,  2.46it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  42% 42/100 [00:19<00:27,  2.13it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  43% 43/100 [00:19<00:23,  2.43it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  44% 44/100 [00:19<00:21,  2.58it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  45% 45/100 [00:20<00:19,  2.76it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  46% 46/100 [00:20<00:19,  2.83it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  47% 47/100 [00:20<00:18,  2.93it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  48% 48/100 [00:21<00:20,  2.50it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  49% 49/100 [00:21<00:20,  2.50it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  50% 50/100 [00:22<00:21,  2.33it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  51% 51/100 [00:22<00:21,  2.32it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  52% 52/100 [00:23<00:25,  1.85it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  53% 53/100 [00:24<00:25,  1.86it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  54% 54/100 [00:24<00:25,  1.83it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  55% 55/100 [00:25<00:27,  1.65it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  56% 56/100 [00:25<00:26,  1.69it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  57% 57/100 [00:26<00:24,  1.74it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  58% 58/100 [00:26<00:21,  1.96it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  59% 59/100 [00:27<00:20,  1.96it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  60% 60/100 [00:27<00:17,  2.24it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  61% 61/100 [00:27<00:16,  2.42it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  62% 62/100 [00:28<00:16,  2.37it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  63% 63/100 [00:28<00:14,  2.48it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  64% 64/100 [00:29<00:13,  2.73it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  65% 65/100 [00:29<00:12,  2.74it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  66% 66/100 [00:29<00:12,  2.76it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  67% 67/100 [00:30<00:11,  2.80it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  68% 68/100 [00:30<00:11,  2.89it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  69% 69/100 [00:30<00:10,  3.00it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  70% 70/100 [00:31<00:10,  2.78it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  71% 71/100 [00:31<00:09,  2.99it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  72% 72/100 [00:31<00:11,  2.49it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  73% 73/100 [00:32<00:11,  2.41it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  74% 74/100 [00:33<00:13,  1.96it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  75% 75/100 [00:33<00:11,  2.17it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  76% 76/100 [00:33<00:10,  2.21it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  77% 77/100 [00:34<00:10,  2.30it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  78% 78/100 [00:34<00:09,  2.35it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  79% 79/100 [00:35<00:09,  2.20it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  80% 80/100 [00:35<00:08,  2.49it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  81% 81/100 [00:35<00:07,  2.66it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  82% 82/100 [00:36<00:07,  2.46it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  83% 83/100 [00:37<00:08,  1.90it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  84% 84/100 [00:37<00:08,  1.78it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  85% 85/100 [00:38<00:08,  1.77it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  86% 86/100 [00:38<00:08,  1.68it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  87% 87/100 [00:39<00:07,  1.73it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  88% 88/100 [00:40<00:07,  1.69it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  89% 89/100 [00:40<00:05,  1.89it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  90% 90/100 [00:40<00:05,  1.99it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  91% 91/100 [00:41<00:03,  2.28it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  92% 92/100 [00:41<00:03,  2.54it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  93% 93/100 [00:41<00:02,  2.78it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  94% 94/100 [00:42<00:02,  2.47it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  95% 95/100 [00:42<00:02,  2.22it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  96% 96/100 [00:43<00:01,  2.47it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  97% 97/100 [00:43<00:01,  2.74it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  98% 98/100 [00:43<00:00,  2.50it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra:  99% 99/100 [00:44<00:00,  2.63it/s]>>> USING OLLAMA <<<
+Testing abstract_algebra: 100% 100/100 [00:44<00:00,  2.24it/s]
+✓ Result: 29/100 correct = 29.00%
+
+======================================================================
+EVALUATION SUMMARY
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+None (full precision)
+Total Subjects: 1
+Total Questions: 100
+Total Correct: 29
+Overall Accuracy: 29.00%
+Duration: 0.8 minutes
+======================================================================
+
+✓ Results saved to: llama_3.2_1b_mmlu_results_full_20260310_142926.json
+
+📊 Top 5 Subjects:
+  1. abstract_algebra: 29.00%
+
+📉 Bottom 5 Subjects:
+  1. abstract_algebra: 29.00%
+
+======================================================================
+💾 To download results in Colab:
+======================================================================
+from google.colab import files
+files.download('llama_3.2_1b_mmlu_results_full_20260310_142926.json')
+
+✅ Evaluation complete!
+
+real	0m56.131s
+user	0m8.368s
+sys	0m1.110s

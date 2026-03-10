@@ -1,0 +1,44 @@
+============================================================
+TEST 1: Query requiring tool
+============================================================
+User: What's the weather like in San Francisco?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: get_weather
+  Args: {'location': 'San Francisco'}
+  Result: Sunny, 72Â°F
+
+--- Iteration 2 ---
+Assistant: The weather in San Francisco is sunny with a temperature of 72°F.
+
+
+============================================================
+TEST 2: Query not requiring tool
+============================================================
+User: Say hello!
+
+--- Iteration 1 ---
+Assistant: Hello! How can I assist you today?
+
+
+============================================================
+TEST 3: Multiple tool calls
+============================================================
+User: What's the weather in New York and London?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: get_weather
+  Args: {'location': 'New York'}
+  Result: Cloudy, 55Â°F
+  Tool: get_weather
+  Args: {'location': 'London'}
+  Result: Rainy, 48Â°F
+
+--- Iteration 2 ---
+Assistant: The current weather is as follows:
+
+- **New York**: Cloudy, 55°F
+- **London**: Rainy, 48°F
+

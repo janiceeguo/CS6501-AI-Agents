@@ -1,0 +1,87 @@
+
+======================================================================
+Llama 3.2-1B MMLU Evaluation (Quantized)
+======================================================================
+
+======================================================================
+Environment Check
+======================================================================
+âœ“ Running in Google Colab
+âœ“ Platform: Linux (x86_64)
+âœ“ GPU Available: Tesla T4
+âœ“ GPU Memory: 15.64 GB
+âœ“ Quantization disabled - loading full precision model
+âš ï¸  Could not check Hugging Face authentication
+
+======================================================================
+Configuration
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+Device: cuda
+Quantization: None (full precision)
+Expected memory: ~2.5 GB (FP16)
+Number of subjects: 1
+======================================================================
+
+
+Loading model meta-llama/Llama-3.2-1B-Instruct...
+Device: cuda
+âœ“ Tokenizer loaded
+Loading model (this may take 2-3 minutes)...
+Loading weights: 100% 146/146 [00:02<00:00, 57.84it/s, Materializing param=model.norm.weight]
+âœ“ Model loaded successfully!
+  Model device: cuda:0
+  Model dtype: torch.float16
+  GPU Memory: 2.47 GB allocated, 2.49 GB reserved
+
+======================================================================
+Starting evaluation on 1 subjects
+======================================================================
+
+
+Progress: 1/1 subjects
+
+======================================================================
+Evaluating subject: anatomy
+======================================================================
+anatomy/test-00000-of-00001.parquet: 100% 20.1k/20.1k [00:01<00:00, 18.8kB/s]
+anatomy/validation-00000-of-00001.parque(…): 100% 5.28k/5.28k [00:00<00:00, 16.1kB/s]
+anatomy/dev-00000-of-00001.parquet: 100% 3.50k/3.50k [00:00<00:00, 9.64kB/s]
+Generating test split: 100% 135/135 [00:00<00:00, 12538.61 examples/s]
+Generating validation split: 100% 14/14 [00:00<00:00, 6241.52 examples/s]
+Generating dev split: 100% 5/5 [00:00<00:00, 2243.42 examples/s]
+Testing anatomy:   0% 0/135 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Testing anatomy: 100% 135/135 [00:04<00:00, 29.81it/s]
+âœ“ Result: 65/135 correct = 48.15%
+
+======================================================================
+EVALUATION SUMMARY
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+None (full precision)
+Total Subjects: 1
+Total Questions: 135
+Total Correct: 65
+Overall Accuracy: 48.15%
+Duration: 0.2 minutes
+======================================================================
+
+âœ“ Results saved to: llama_3.2_1b_mmlu_results_full_20260310_142556.json
+
+ðŸ“Š Top 5 Subjects:
+  1. anatomy: 48.15%
+
+ðŸ“‰ Bottom 5 Subjects:
+  1. anatomy: 48.15%
+
+======================================================================
+ðŸ’¾ To download results in Colab:
+======================================================================
+from google.colab import files
+files.download('llama_3.2_1b_mmlu_results_full_20260310_142556.json')
+
+âœ… Evaluation complete!
+
+real	0m27.802s
+user	0m18.263s
+sys	0m3.707s

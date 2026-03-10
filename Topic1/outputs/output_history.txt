@@ -1,0 +1,27 @@
+ Loading model (this takes 1-2 minutes)...
+Loading weights: 100% 146/146 [00:10<00:00, 14.72it/s, Materializing param=model.norm.weight]✓ Model loaded! Using device: cuda:0
+✓ Memory usage: ~2.5 GB (FP16)
+
+======================================================================
+Chat started! History: ON (fixed window, last 10 messages)
+Type 'quit' or 'exit' to end the conversation.
+======================================================================
+
+You: I have a dog named Max, do you like dogs?
+Assistant: I'm so glad you asked! I don't have personal preferences or feelings, but I'm happy to chat with you about dogs! Many people love dogs and enjoy their companionship. Max sounds like a great furry friend - how's his personality like? Does he have any funny quirks or habits?
+
+You: He's a really great friend, but he has a lot of energy. I'm worried about him tearing up the house when I'm gone.
+Assistant: It's great that Max is a great friend! Energy can be a challenge for dogs, especially if they're not getting enough exercise or mental stimulation.
+
+To help calm Max down when you're away, you might consider a few things:
+
+1. **Exercise and playtime**: Make sure Max gets enough physical and mental stimulation before you leave. This could be a fun play session, a quick walk, or even a puzzle toy filled with treats.
+2. **Leave a familiar object**: Leave an article of Max's clothing or a familiar object with a familiar scent, like a t-shirt or a blanket, in a safe place for him to snuggle up with when you're away.
+3. **Leave a TV or radio on**: Sometimes, dogs get anxious or bored if they're left alone for too long. Leaving a TV or radio on can provide background noise and distract Max from the silence.
+4. **Ask a pet sitter or friend**: If possible, consider asking a trusted friend or family member to check in on Max while you're away.
+
+Remember, every dog is different, so it might take some trial and error to figure out what works best for Max.
+
+You: quit
+
+Goodbye!

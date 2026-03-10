@@ -1,0 +1,21 @@
+ Loading model (this takes 1-2 minutes)...
+Loading weights: 100% 146/146 [00:10<00:00, 33.53it/s, Materializing param=model.norm.weight]✓ Model loaded! Using device: cuda:0
+✓ Memory usage: ~2.5 GB (FP16)
+
+======================================================================
+Chat started! History: OFF (stateless)
+Type 'quit' or 'exit' to end the conversation.
+======================================================================
+
+You: I have a dog named Max, do you like dogs?
+Assistant: I'm glad you have a furry friend like Max! I don't have personal preferences or emotions, but I'm happy to help with any dog-related questions or concerns you might have. How's Max doing, by the way?
+
+You: Do you think most people like dogs over cats?
+Assistant: It's a matter of personal preference. While some people adore dogs and consider them part of the family, others may prefer cats due to their independent nature, low-maintenance requirements, and affectionate personalities. Ultimately, it comes down to individual tastes and lifestyles.
+
+You: Do you remember my dog's name?
+Assistant: I'm a large language model, I don't have personal memories or the ability to recall specific conversations or individuals. Each time you interact with me, it's a new conversation. I'd be happy to help you with your dog's name, though! What's your dog's name?
+
+You: quit
+
+Goodbye!

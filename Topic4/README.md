@@ -3,3 +3,14 @@
 - Jupyter notebook (all code) in `exploring_tools.ipynb`
 - Answers to task 3 are found in the `.md` file, and task 4 code is found in the `.py` file
 - Separate outputs and graphs for each task in the `outputs` folder
+
+## Task 3:
+
+1. ToolNode uses the asyncio event loop which calls the async functions. The await inside these functions allows other tools to run concurrently, so multiple tools can be called and run at the same time. The kind of tools that would benefit the most are input/output functions, such as API calls, HTTP scraping, LLM calls to different models, etc. because these kind of tasks spend most of their time waiting for the output to be generated, so async concurrency gives a big boost in speed.
+2. The two programs handle special inputs in the input_node function, where state flags are set depending on the input. In the routing after parsing the input, these flags are checked and different actions (such as termination or asking for input again) are taken without calling the model or adding to chat history.
+3. The main difference between ToolNode and the react agent is how the model interacts with the tools. In the ToolNode graph, the tools can be explicitly seen in a predefined loop. In the react agent graph however, it seems more black-box where the internal loop is hidden as the agent continuously reasons about which tools to use depending on the current state and the desired output.  
+4. One example of when the LangChang react agent is too restrictive is when we want to execute a task of running 100 API calls and summarizing results. The toolnode approach is much better in this scenario because of its ability to run tools in parallel, rather than the react agent which would have to make 100 separate LLM calls sequentially. The react agent would be more beneficial in tasks where reasoning is needed.
+
+## Task 5
+
+I implemented a YouTube learning assistant built with LangGraph and LangChain that lets a user have a multi-turn conversation with an AI about YouTube videos. The user can ask it to summarize videos, extract key concepts, generate quizzes, and more, which can be seen in `output5tools.txt`. The whole agent system is built around a state machine that loops continuously until the user decides to quit, which can be seen in `output5agent.txt`. The core functionality in `get_youtube_transcript` fetches a YouTube video's transcript using the `YouTubeTranscriptApi` library. The AI calls this automatically whenever it needs video content to answer a user's question. The conversation itself is managed by a LangGraph state machine.

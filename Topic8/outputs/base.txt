@@ -1,0 +1,12 @@
+Total examples: 78577
+
+Sample example:
+  Question: How many heads of the departments are older than 56 ?
+  Context:  CREATE TABLE head (age INTEGER)...
+  Answer:   SELECT COUNT(*) FROM head WHERE age > 56
+
+Training examples: 78377 (all except evaluation)
+Test examples: 200
+
+--- Evaluating Base Model on 200 Test Questions ---
+Base model accuracy: 41.00% (82/200)
